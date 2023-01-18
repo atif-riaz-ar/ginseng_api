@@ -1,0 +1,116 @@
+/**
+Basic styles (don't needed for the Globe to function)
+**/
+body { background-color: #fff; font-family: Georgia, serif; line-height: 1.5; font-size: 18px; color: #2c3e50; }
+h2 { padding: 0;margin: 0;padding-top: 1.6em;font-size: 32px; line-height: 1.2; }
+h2 span {font-size: 65%;}
+.container { max-width: 960px; margin: 0 auto; }
+.container .btn { clear: both; padding-top: 1em; border-top: 1px solid #ccc; border-top: 1px solid rgba(0,0,0,0.1); }
+.container button { width: 100px; height: 40px; border: none; border-bottom: 1px solid #ccc; background-color: #efefef; border-radius: 4px; }
+
+/**
+Globe Elements
+**/
+.globe__placeholder {
+  -webkit-box-sizing: content-box;
+     -moz-box-sizing: content-box;
+          box-sizing: content-box;
+  -webkit-border-radius: 6px;
+     -moz-border-radius: 6px;
+          border-radius: 6px;
+  overflow: visible;
+  position: relative;
+  float: left;
+  padding: 1.7em;
+  margin: 0;
+  margin-bottom: 16px;
+  height: 200px; /* Unscaled is 200px. If 'globe__container' is scaled, multiply this value by scale() property, e.g. 200px * 0.5 = 100px */
+  width:  200px; /* Unscaled is 200px. If 'globe__container' is scaled, multiply this value by scale() property, e.g. 200px * 0.5 = 100px */
+}
+
+.globe__container {
+  overflow: visible;
+  position: relative;  
+  display: block;
+  margin: 0;
+  padding: 0;
+  top: 0;
+  left: 0;
+/*
+  -webkit-transform: scale(0.5);
+     -moz-transform: scale(0.5);
+      -ms-transform: scale(0.5);
+       -o-transform: scale(0.5);
+          transform: scale(0.5);
+  -webkit-transform-origin: 0 0;
+     -moz-transform-origin: 0 0;
+      -ms-transform-origin: 0 0;
+       -o-transform-origin: 0 0;
+          transform-origin: 0 0;
+*/
+}
+
+.globe__container,
+.globe {
+  width: 200px;
+  height: 200px;  
+}
+.globe {
+  overflow: visible;
+  position: relative;  
+  display: block;
+  margin: 0;
+  padding: 0;
+  top: 0; left: 0;
+}
+
+.globe__worldmap,
+.globe__worldmap__front,
+.globe__worldmap__back,
+.globe__sphere,
+.globe__outer_shadow,
+.globe__reflections__bottom,
+.globe__inner_shadow,
+.globe__reflections__top,
+.globe__outer_shadow {
+  position: absolute; display: block; margin: 0; right: auto; bottom: auto;  
+}
+
+.globe__sphere,
+.globe__outer_shadow,
+.globe__reflections__bottom,
+.globe__inner_shadow,
+.globe__reflections__top {
+  left: 0; top: 0; width: 200px; height: 200px;
+  background-position: 0 0; background-repeat: no-repeat;
+}
+.globe__outer_shadow {
+  left: 0; top: 186px; width: 200px; height: 30px;
+  background-position: 0 0; background-repeat: no-repeat;
+}
+
+/* Circle mask for animated SVG files */
+.globe__worldmap {
+  left: 0; top: 0; width: 200px; height: 200px; overflow: hidden;
+  -webkit-border-radius: 50%;
+   -khtml-border-radius: 50%;
+     -moz-border-radius: 50%;
+          border-radius: 50%;
+-webkit-mask-image: -webkit-radial-gradient(circle, white 100%, black 100%);
+}
+
+.globe__worldmap__front,
+.globe__worldmap__back {
+  left: 0; top: 0; width: 1000px; height: 200px; overflow: visible;
+  background-image: url(../globe_images/worldmap_2x.svg);
+  background-repeat: no-repeat;
+}
+
+.globe__sphere { background-image: url(../globe_images/sphere.svg);}
+.globe__outer_shadow { background-image: url(../globe_images/outer_shadow.svg);}
+.globe__reflections__top { background-image: url(../globe_images/reflections.svg);}
+.globe__reflections__bottom { background-image: url(../globe_images/reflections.svg);}
+.globe__inner_shadow { background-image: url(../globe_images/inner_shadow.svg);}
+.globe__worldmap__front { background-position: 0px 0px;}
+.globe__worldmap__back { background-position: 0px -200px;}
+

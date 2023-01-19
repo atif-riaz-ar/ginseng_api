@@ -24,7 +24,6 @@ class Export extends CI_Controller
 			return $this->load->view("loader", $data);
 			exit;
 		}
-		$this->load->library('ledgersheet');
 		echo $this->ledgersheet($_POST);
 	}
 
@@ -37,7 +36,6 @@ class Export extends CI_Controller
 			return $this->load->view("loader", $data);
 			exit;
 		}
-		$this->load->library('ordersheet');
 		echo $this->ordersheet($_POST);
 	}
 
@@ -50,7 +48,6 @@ class Export extends CI_Controller
 			return $this->load->view("loader", $data);
 			exit;
 		}
-		$this->load->library('membersheet');
 		echo $this->membersheet($_POST);
 	}
 
